@@ -1,0 +1,11 @@
+1.0.1:
+    - 'Initialize plugin.'
+1.0.2:
+    - 'Created table meysam_test_stories'
+    - builder_table_create_meysam_test_stories.php
+1.0.3:
+    - 'Created table meysam_test_words'
+    - builder_table_create_meysam_test_words.php
+1.0.4:
+    - 'Created table meysam_test_stories_words'
+    - builder_table_create_meysam_test_stories_words.php

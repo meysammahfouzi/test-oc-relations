@@ -1,0 +1,8 @@
+words:
+  label: Word
+  view:
+    list: $/meysam/test/models/word/columns.yaml
+    toolbarOptions: add|remove
+  manage:
+    list: $/meysam/test/models/word/columns.yaml
+    form: $/meysam/test/models/word/fields.yaml

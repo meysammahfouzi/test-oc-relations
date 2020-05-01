@@ -1,0 +1,10 @@
+name: Stories
+form: $/meysam/test/models/story/fields.yaml
+modelClass: Meysam\Test\Models\Story
+defaultRedirect: meysam/test/stories
+create:
+    redirect: 'meysam/test/stories/update/:id'
+    redirectClose: meysam/test/stories
+update:
+    redirect: meysam/test/stories
+    redirectClose: meysam/test/stories

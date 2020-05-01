@@ -1,0 +1,20 @@
+plugin:
+    name: 'meysam.test::lang.plugin.name'
+    description: 'meysam.test::lang.plugin.description'
+    author: Meysam
+    icon: oc-icon-book
+    homepage: ''
+navigation:
+    main-menu-test:
+        label: Stories
+        url: meysam/test/stories
+        icon: icon-book
+        sideMenu:
+            side-menu-stories:
+                label: Stories
+                url: meysam/test/stories
+                icon: icon-book
+            side-menu-words:
+                label: Words
+                url: meysam/test/words
+                icon: icon-file-word-o

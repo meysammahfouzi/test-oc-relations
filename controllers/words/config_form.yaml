@@ -1,0 +1,10 @@
+name: Words
+form: $/meysam/test/models/word/fields.yaml
+modelClass: Meysam\Test\Models\Word
+defaultRedirect: meysam/test/words
+create:
+    redirect: 'meysam/test/words/update/:id'
+    redirectClose: meysam/test/words
+update:
+    redirect: meysam/test/words
+    redirectClose: meysam/test/words

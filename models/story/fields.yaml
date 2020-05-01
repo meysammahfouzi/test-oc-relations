@@ -1,0 +1,13 @@
+fields:
+    title:
+        label: Title
+        span: auto
+        type: text
+    _add_word:
+        label: Add related words
+        type: story_word
+        span: auto
+    words:
+        label: Words
+        type: partial
+        address: words
