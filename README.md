@@ -1,3 +1,3 @@
 # Sample plugin
 
-Sample plugin to add relations using custom form widgets.
+Sample plugin to add many-to-many relationships using custom form widgets.
