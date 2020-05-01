@@ -1,3 +1,3 @@
-# test-oc-relations
+# Sample plugin
 
 Sample plugin to add relations using custom form widgets.
