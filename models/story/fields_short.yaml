@@ -1,0 +1,5 @@
+fields:
+    words:
+        label: Words
+        type: partial
+        address: words
