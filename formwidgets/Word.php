@@ -1,6 +1,7 @@
 <?php namespace Meysam\Test\FormWidgets;
 
 use Backend\Classes\FormWidgetBase;
+use Meysam\Test\Models\Story as StoryModel;
 use Meysam\Test\Models\Word as WordModel;
 
 class Word extends FormWidgetBase
@@ -38,10 +39,21 @@ class Word extends FormWidgetBase
 
     public function onAddWord()
     {
-        $wordId = post($this->getFieldName());
+        $sessionKey = $this->controller->formGetSessionKey();
+        $storyModel = $this->model;
+        $wordsRelation = $storyModel->words();
+
+        $wordId  = post($this->getFieldName());
+
+        $context = $this->controller->widget->form->context;
 
         if (is_numeric($wordId)) {
-            $this->model->words()->syncWithoutDetaching([$wordId]);
+            if ($context === 'update') {
+                $wordsRelation->syncWithoutDetaching([$wordId]);
+            } else {
+                $word = WordModel::find('id');
+                $wordsRelation->add($word, $sessionKey);
+            }
         } else {
             // if the word that user selected, was not in the list, wordId does not contain any ID,
             // but it's the actual new word the needs to be added to the words table
@@ -50,7 +62,11 @@ class Word extends FormWidgetBase
                     'title' => $wordId,
                 ]
             );
-            $this->model->words()->attach($newWord->id);
+            if ($context === 'update') {
+                $wordsRelation->attach($newWord->id);
+            } else {
+                $wordsRelation->add($newWord, $sessionKey);
+            }
         }
 
         // refresh the relation manager list
